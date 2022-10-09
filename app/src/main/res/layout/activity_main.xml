@@ -4,12 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager2"
+    <Button
+        android:id="@+id/btnSample1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" />
+        android:layout_height="wrap_content"
+        android:text="Load More List Sample 1" />
+
+    <Button
+        android:id="@+id/btnSample2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load More List Sample 2" />
+
+    <Button
+        android:id="@+id/btnInfinite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Infinite ViewPager2" />
 
 </LinearLayout>
