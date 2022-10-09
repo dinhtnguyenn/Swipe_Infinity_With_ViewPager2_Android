@@ -5,12 +5,14 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.dinhnt.scrollinfinity.adapter.ListLoadMore2Adapter;
 import com.dinhnt.scrollinfinity.adapter.ListLoadMoreAdapter;
+import com.dinhnt.scrollinfinity.models.SampleLoadMore;
 
 import java.util.ArrayList;
 
-public class LoadMoreActivity extends AppCompatActivity {
-    ArrayList<Integer> list;
+public class LoadMore2Activity extends AppCompatActivity {
+    ArrayList<SampleLoadMore> list;
     int i = 0;
 
     @Override
@@ -23,10 +25,10 @@ public class LoadMoreActivity extends AppCompatActivity {
         //tạo list ban đầu có 3 giá trị
         list = new ArrayList<>();
         for (; i < 3; i++) {
-            list.add(i);
+            list.add(new SampleLoadMore(i));
         }
 
-        ListLoadMoreAdapter adapter = new ListLoadMoreAdapter(this, list);
+        ListLoadMore2Adapter adapter = new ListLoadMore2Adapter(this, list);
         viewPager2.setAdapter(adapter);
 
         viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -38,7 +40,7 @@ public class LoadMoreActivity extends AppCompatActivity {
                 if (position == (list.size() - 1)) {
                     int tong = list.size() + 3;
                     for (; i < tong; i++) {
-                        list.add(i);
+                        list.add(new SampleLoadMore(i));
                     }
                     adapter.notifyItemChanged(i + 1);
                 }
